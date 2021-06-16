@@ -17,6 +17,11 @@ Grid2D<T>::Grid2D(std::vector<std::vector<T>> const & grid)
 {}
 
 template <typename T>
+Grid2D<T>::Grid2D(std::initializer_list<std::initializer_list<T>> const & list)
+    : grid(list.begin(), list.end())
+{}
+
+template <typename T>
 T const & Grid2D<T>::operator()(size_t x, size_t y) const
 {
     return grid.at(y).at(x);
